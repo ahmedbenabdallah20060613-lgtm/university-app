@@ -1,3 +1,4 @@
+import './Footer.css';
 function Footer() {
   return (
     <footer className="footer">
@@ -7,3 +8,4 @@ function Footer() {
 }
 
 export default Footer;
+

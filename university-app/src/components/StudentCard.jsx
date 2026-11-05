@@ -1,7 +1,20 @@
+import './StudentCard.css';
+
 function StudentCard(props) {
+  const {
+    nomComplet = "Nom & Prénom",
+    email = "email@gmail.com",
+    telephone = "Téléphone",
+    filiere = "Filière",
+    anneeEtude = "Année d'étude",
+    groupe = "Groupe",
+    ville = "Non renseignée"
+  } = props;
+
   return (
     <div className="card-container">
-      {/* قسم الصورة الشخصية */}
+      <h1 className="title">Fiche étudiant</h1>
+      
       <div className="avatar-container">
         <img 
           src={props.image} 
@@ -9,22 +22,19 @@ function StudentCard(props) {
           className="student-avatar"
         />
       </div>
-
-      <h1 className="title">Fiche étudiant</h1>
       
       <div className="info-section">
-        <p><strong>Nom & Prénom:</strong> {props.nomComplet}</p>
-        <p><strong>Email:</strong> {props.email}</p>
-        <p><strong>Téléphone:</strong> {props.telephone}</p>
-        <p><strong>Filière:</strong> {props.filiere}</p>
-        <p><strong>Année d'étude:</strong> {props.anneeEtude}</p>
-        <p><strong>Groupe:</strong> {props.groupe}</p>
-        <p><strong>Ville:</strong> {props.ville}</p>
+        <p><strong>Nom & Prénom:</strong> {nomComplet}</p>
+        <p><strong>Email:</strong> {email}</p>
+        <p><strong>Téléphone:</strong> {telephone}</p>
+        <p><strong>Filière:</strong> {filiere}</p>
+        <p><strong>Année d'étude:</strong> {anneeEtude}</p>
+        <p><strong>Groupe:</strong> {groupe}</p>
+        <p><strong>Ville:</strong> {ville}</p>
       </div>
 
-      {/* زر إرسال البريد الإلكتروني */}
       <div className="button-container">
-        <a href={`mailto:${props.email}`} className="contact-btn">
+        <a href={`mailto:${email}`} className="contact-btn">
           Contacter
         </a>
       </div>

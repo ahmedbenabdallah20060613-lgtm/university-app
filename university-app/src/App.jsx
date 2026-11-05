@@ -7,35 +7,36 @@ import myPhoto from './assets/moi.jpg';
 
 function App() {
   const etudiants = [
-      {
-        nomComplet: "Ahmed Ben Abdallah",
-        email: "ahmedbenabdallah20060613@gmail.com",
-        telephone: "+216 25180041",
-        filiere: "Génie Logiciel et Systèmes d'informatique",
-        groupe: "GLSI2",
-        ville: "Mahdia",
-        anneeEtude: "2ème année",
-        image: myPhoto,
-      },
-      {
-        nomComplet: "Slim Boubaker",
-        email: "slim.boubaker@gmail.com",
-        telephone: "+216 99 999 999",
-        filiere: "Génie Logiciel et Systèmes d'informatique",
-        groupe: "GLSI2",
-        ville: "Mahdia",
-        image: myPhoto,
-      },
-      {
-        nomComplet: "Sarra Trabelsi",
-        email: "sarra.trabelsi@gmail.com",
-        telephone: "+216 22 345 678",
-        filiere: "Génie Logiciel et Systèmes d'informatique",
-        groupe: "GLSI1",
-        ville: "Sousse",
-        image: myPhoto,
-      }
-    ];
+    {
+      nomComplet: "Ahmed Ben Abdallah",
+      email: "ahmedbenabdallah20060613@gmail.com",
+      telephone: "+216 25180041",
+      filiere: "Génie Logiciel et Systèmes d'informatique",
+      groupe: "GLSI2",
+      ville: "Mahdia",
+      anneeEtude: "2ème année",
+      image: myPhoto,
+    },
+    {
+      nomComplet: "Slim Boubaker",
+      email: "slim.boubaker@gmail.com",
+      telephone: "+216 99 999 999",
+      filiere: "Génie Logiciel et Systèmes d'informatique",
+      groupe: "GLSI2",
+      ville: "Mahdia",
+      image: myPhoto,
+    },
+    {
+      nomComplet: "Sarra Trabelsi",
+      email: "sarra.trabelsi@gmail.com",
+      telephone: "+216 22 345 678",
+      filiere: "Génie Logiciel et Systèmes d'informatique",
+      groupe: "GLSI1",
+      ville: "Sousse",
+      anneeEtude: "2ème année",
+      image: myPhoto,
+    }
+  ];
 
   return (
     <div className="app-container">
@@ -46,8 +47,7 @@ function App() {
         {etudiants.map((etudiant) => (
           <StudentCard
             key={etudiant.email}
-            prenom={etudiant.prenom}
-            nom={etudiant.nom}
+            nomComplet={etudiant.nomComplet}
             email={etudiant.email}
             telephone={etudiant.telephone}
             filiere={etudiant.filiere}

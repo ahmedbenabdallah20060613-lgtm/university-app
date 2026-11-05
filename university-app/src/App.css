@@ -1,84 +1,22 @@
-/* ضبط الصفحة لتأخذ الشاشة كاملة */
-html, body {
-  width: 100%;
-  height: 100vh;
+body {
   margin: 0;
-  padding: 0;
-  background-color: #f0f2f5;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
 }
 
-/* استخدام الفليكس بوكس لجعل البطاقة في المنتصف تماماً أفقياً وعمودياً */
-#root {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-container {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  width: 420px;
-  text-align: center;
-}
-
-.avatar-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-
-.student-avatar {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #007bff;
-}
-
-.title {
-  color: #007bff;
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.info-section {
+.app-container {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 25px;
+  justify-content: space-between;
 }
 
-.info-section p {
-  margin: 6px 0;
-  font-size: 14px;
-  color: #333;
-  width: 100%;
-  text-align: center;
-}
-
-.button-container {
+.container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-}
-
-.contact-btn {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 25px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  transition: background 0.3s ease;
-}
-
-.contact-btn:hover {
-  background-color: #0056b3;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
