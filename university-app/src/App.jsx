@@ -1,44 +1,65 @@
 import './App.css';
+import Header from './components/Header';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import StudentCard from './components/StudentCard';
 import myPhoto from './assets/moi.jpg';
 
 function App() {
-  const student = "Ahmed Ben Abdallah";
-  const ema = "ahmedbenabdallah20060613@gmail.com";
-  const tel = "+216 25180041";
-  const fil = "Génie Logiciel et Systèmes d'informatique";
-  const grp = "GLSI2";
-  const vil = "Mahdia";
-  const ann = "2ème année";
+  const etudiants = [
+      {
+        nomComplet: "Ahmed Ben Abdallah",
+        email: "ahmedbenabdallah20060613@gmail.com",
+        telephone: "+216 25180041",
+        filiere: "Génie Logiciel et Systèmes d'informatique",
+        groupe: "GLSI2",
+        ville: "Mahdia",
+        anneeEtude: "2ème année",
+        image: myPhoto,
+      },
+      {
+        nomComplet: "Slim Boubaker",
+        email: "slim.boubaker@gmail.com",
+        telephone: "+216 99 999 999",
+        filiere: "Génie Logiciel et Systèmes d'informatique",
+        groupe: "GLSI2",
+        ville: "Mahdia",
+        image: myPhoto,
+      },
+      {
+        nomComplet: "Sarra Trabelsi",
+        email: "sarra.trabelsi@gmail.com",
+        telephone: "+216 22 345 678",
+        filiere: "Génie Logiciel et Systèmes d'informatique",
+        groupe: "GLSI1",
+        ville: "Sousse",
+        image: myPhoto,
+      }
+    ];
 
   return (
-    <div className="card-container">
-      {/* قسم الصورة الشخصية */}
-      <div className="avatar-container">
-        <img 
-          src={myPhoto} 
-          alt="Avatar étudiant" 
-          className="student-avatar"
-        />
-      </div>
-
-      <h1 className="title">Fiche étudiant</h1>
+    <div className="app-container">
+      <Header />
+      <Navbar />
       
-      <div className="info-section">
-        <p><strong>Nom & Prénom:</strong> {student}</p>
-        <p><strong>Email:</strong> {ema}</p>
-        <p><strong>Téléphone:</strong> {tel}</p>
-        <p><strong>Filière:</strong> {fil}</p>
-        <p><strong>Année d'étude:</strong> {ann}</p>
-        <p><strong>Groupe:</strong> {grp}</p>
-        <p><strong>Ville:</strong> {vil}</p>
+      <div className="container">
+        {etudiants.map((etudiant) => (
+          <StudentCard
+            key={etudiant.email}
+            prenom={etudiant.prenom}
+            nom={etudiant.nom}
+            email={etudiant.email}
+            telephone={etudiant.telephone}
+            filiere={etudiant.filiere}
+            anneeEtude={etudiant.anneeEtude}
+            groupe={etudiant.groupe}
+            ville={etudiant.ville}
+            image={etudiant.image}
+          />
+        ))}
       </div>
 
-      {/* زر إرسال البريد الإلكتروني */}
-      <div className="button-container">
-        <a href={`mailto:${ema}`} className="contact-btn">
-          Contacter
-        </a>
-      </div>
+      <Footer />
     </div>
   );
 }
